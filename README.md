@@ -1,49 +1,48 @@
-# SLiMS Storage Monitor Plugin
+# Plugin SLiMS Storage Monitor
 
-> ⚠️ **Disclaimer**  
+> ⚠️ **Peringatan**
 > JANGAN langsung pasang DI SLiMS Operasional (tes di PC/SLiMS lain). Gunakan dengan risiko Anda sendiri.
 
-
-The SLiMS Storage Monitor is a plugin for the Senayan Library Management System (SLiMS) designed to provide real-time reports on disk usage for important SLiMS folders. It helps administrators understand storage consumption, identify large files or plugins, and estimate overall server disk space.
+SLiMS Storage Monitor adalah sebuah plugin untuk Senayan Library Management System (SLiMS) yang dirancang untuk menyediakan laporan mengenai penggunaan disk pada folder-folder penting SLiMS. Plugin ini membantu administrator memahami konsumsi penyimpanan, mengidentifikasi file atau plugin berukuran besar, dan memperkirakan keseluruhan ruang disk server.
 ![msedge_MgJ2zR8uxQ](https://github.com/user-attachments/assets/dae8b376-2f39-4c6e-aa8e-78c62985f86c)
 
-## Features
+## Fitur
 
-*   **Real-time Disk Usage:** Reports current disk usage for configured SLiMS folders.
-*   **Summary View:**
-    *   Total size and item count for each monitored folder.
-    *   Breakdown of top file types by count within each folder.
-    *   Overall total for all monitored SLiMS data (files and size).
-*   **Detailed Folder View:**
-    *   Lists all files and subfolders within a selected monitored path.
-    *   Displays individual sizes for each item.
-    *   Paginated results for large folders.
-*   **Top Items Display:** Shows the top 5 largest files (or plugins, in the case of the `plugins` directory) for each monitored path in a card layout on the summary page.
-*   **Server Disk Space Estimation:**
-    *   Estimates total, used, and free disk space for the partition where SLiMS is installed.
-    *   Visual progress bar indicating usage percentage.
-*   **Configurable Paths:**
-    *   Monitors a default set of SLiMS folders (`repository`, `files/backup`, `files/reports`, `images/*`, `plugins`). Paths are derived relative to the SLiMS installation root.
-    *   Allows overriding default paths or adding new custom paths via SLiMS system configuration (`$sysconf['folder_size_report_paths']`).
-*   **File Filtering:**
-    *   Ignores common system/web files (e.g., `index.php`, `.htaccess`, `.php`, `.env`, `.sh`) by default to provide more relevant statistics.
-    *   Allows specific folders (e.g., `files/reports`) to keep HTML files in the scan.
-*   **User-Friendly Interface:**
-    *   Integrated into the SLiMS admin panel under "Reporting" as "Storage Report".
-    *   Uses Bootstrap styling and FontAwesome icons for a clean and modern look.
-    *   Provides easy navigation between summary and detail views.
+*   **Penggunaan Disk Waktu-Nyata:** Melaporkan penggunaan disk saat ini untuk folder SLiMS yang dikonfigurasi.
+*   **Tampilan Ringkasan:**
+    *   Total ukuran dan jumlah item untuk setiap folder yang dipantau.
+    *   Rincian jenis file teratas berdasarkan jumlah di setiap folder.
+    *   Total keseluruhan untuk semua data SLiMS yang dipantau (file dan ukuran).
+*   **Tampilan Detail Folder:**
+    *   Menampilkan daftar semua file dan subfolder dalam path (jalur) yang dipantau dan dipilih.
+    *   Menampilkan ukuran individual untuk setiap item.
+    *   Hasil dengan paginasi untuk folder berukuran besar.
+*   **Tampilan Item Teratas:** Menampilkan 5 file (atau plugin, untuk direktori `plugins`) terbesar untuk setiap path (jalur) yang dipantau dalam tata letak kartu di halaman ringkasan.
+*   **Estimasi Ruang Disk Server:**
+    *   Memperkirakan total ruang disk, yang terpakai, dan yang bebas untuk partisi tempat SLiMS diinstal.
+    *   Bilah kemajuan visual yang menunjukkan persentase penggunaan.
+*   **Path (Jalur) yang Dapat Dikonfigurasi:**
+    *   Memantau sekumpulan folder SLiMS default (`repository`, `files/backup`, `files/reports`, `images/*`, `plugins`). Path (jalur) diambil relatif terhadap direktori root instalasi SLiMS.
+    *   Memungkinkan penggantian path (jalur) default atau penambahan path (jalur) kustom baru melalui konfigurasi sistem SLiMS (`$sysconf['folder_size_report_paths']`).
+*   **Penyaringan File:**
+    *   Mengabaikan file sistem/web umum (misalnya, `index.php`, `.htaccess`, `.php`, `.env`, `.sh`) secara default untuk menyediakan statistik yang lebih relevan.
+    *   Memungkinkan folder tertentu (misalnya, `files/reports`) untuk tetap menyertakan file HTML dalam pemindaian.
+*   **Antarmuka yang Ramah Pengguna:**
+    *   Terintegrasi ke dalam panel admin SLiMS di bawah "Pelaporan" ("Reporting") sebagai "Laporan Penyimpanan" ("Storage Report").
+    *   Menggunakan gaya Bootstrap dan ikon FontAwesome untuk tampilan yang bersih dan modern.
+    *   Menyediakan navigasi yang mudah antara tampilan ringkasan dan detail.
 
-## Installation
+## Instalasi
 
-read here [https://github.com/adeism/belajarslims/blob/main/belajar-pasang-plugin.md](https://github.com/adeism/belajarslims/blob/main/belajar-pasang-plugin.md)
+baca di sini [https://github.com/adeism/belajarslims/blob/main/belajar-pasang-plugin.md](https://github.com/adeism/belajarslims/blob/main/belajar-pasang-plugin.md)
 
-## Usage
+## Penggunaan
 
-1.  Navigate to **Reporting > Storage Monitor** in the SLiMS admin panel.
-2.  The **Summary Page** will display:
-    *   Server Disk Space Estimation (for the SLiMS partition).
-    *   A table summarizing each monitored folder: name, path, item count, total size, and top file types.
-    *   A section with cards, each showing the top 5 largest files/folders for the respective monitored paths.
-3.  Click on a folder name in the summary table to view the **Detailed Page** for that folder. This page lists all contents (files and sub-folders) with their sizes, sorted by size, and includes pagination if there are many items.
-4.  Use the "Refresh" button to get the latest data.
-5.  Use the "Back to Summary" button from the detail page to return to the main report.
+1.  Akses menu **Pelaporan > Monitor Penyimpanan** (Reporting > Storage Monitor) di panel admin SLiMS.
+2.  **Halaman Ringkasan** akan menampilkan:
+    *   Estimasi Ruang Disk Server (untuk partisi SLiMS).
+    *   Tabel yang merangkum setiap folder yang dipantau: nama, path (jalur), jumlah item, total ukuran, dan jenis file teratas.
+    *   Bagian dengan kartu, masing-masing menunjukkan 5 file/folder terbesar untuk path (jalur) yang dipantau.
+3.  Klik nama folder di tabel ringkasan untuk melihat **Halaman Detail** folder tersebut. Halaman ini menampilkan semua konten (file dan sub-folder) beserta ukurannya, diurutkan berdasarkan ukuran, dan menyertakan paginasi jika ada banyak item.
+4.  Gunakan tombol "Refresh" (Segarkan) untuk mendapatkan data terbaru.
+5.  Gunakan tombol "Back to Summary" (Kembali ke Ringkasan) dari halaman detail untuk kembali ke laporan utama.
