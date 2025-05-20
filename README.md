@@ -1,5 +1,9 @@
 # SLiMS Storage Monitor Plugin
 
+> ⚠️ **Disclaimer**  
+> JANGAN langsung pasang DI SLiMS Operasional (tes di PC/SLiMS lain). Gunakan dengan risiko Anda sendiri.
+
+
 The SLiMS Storage Monitor is a plugin for the Senayan Library Management System (SLiMS) designed to provide real-time reports on disk usage for important SLiMS folders. It helps administrators understand storage consumption, identify large files or plugins, and estimate overall server disk space.
 ![msedge_MgJ2zR8uxQ](https://github.com/user-attachments/assets/dae8b376-2f39-4c6e-aa8e-78c62985f86c)
 
